@@ -10,7 +10,6 @@ inputs:
     default: "a joke for you"
     required: true
   repo-token: ${{ secrets.GITHUB_TOKEN }}
-    description: "Token with permissions to do repo things"
 
 runs:
   using: "node12"
