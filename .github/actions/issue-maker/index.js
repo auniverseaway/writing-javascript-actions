@@ -10,7 +10,7 @@ async function run() {
     const issue_number = github.context.payload.pull_request.number;
     const owner = github.context.repo.owner;
     const repo = github.context.repo.repo;
-    const newComment = octokit.issues.createComment({
+    const newComment = octokit.rest.issues.createComment({
       owner,
       repo,
       issue_number,
