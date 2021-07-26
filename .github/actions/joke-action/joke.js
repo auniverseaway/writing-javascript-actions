@@ -1,4 +1,4 @@
-const { fetch } = require('@adobe/helix-fetch');
+const { fetch, reset } = require('@adobe/helix-fetch');
 
 const options = {
   method: "GET",
@@ -10,9 +10,10 @@ const options = {
 };
 
 async function getJoke() {
-  const res = await fetch('https://icanhazdadjoke.com/', options);
-  const json = await res.json();
-  return json.joke;
+      const res = await fetch('https://icanhazdadjoke.com/', options);
+      const json = await res.json();
+      reset();
+      return json.joke;
 }
 
 module.exports = getJoke;
