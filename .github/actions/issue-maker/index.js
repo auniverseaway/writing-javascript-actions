@@ -4,7 +4,7 @@ const github = require("@actions/github");
 async function run() {
   try {
     const issueTitle = core.getInput("issue-title");
-    const jokeBody = core.getInput("joke");
+    const jokeBody = core.getInput("bop");
     const token = core.getInput("repo-token");
 
     const octokit = new github.getOctokit(token);
