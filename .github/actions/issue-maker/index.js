@@ -7,9 +7,9 @@ async function run() {
 
     const octokit = new github.getOctokit(token);
 
-    const issue_number = context.payload.pull_request.number;
-    const owner = context.github.repository_owner;
-    const repo = context.payload.repository.name;
+    const issue_number = github.context.payload.pull_request.number;
+    const owner = github.context.repo.owner;
+    const repo = github.context.repo.repo;
     const newComment = octokit.issues.createComment({
       owner,
       repo,
